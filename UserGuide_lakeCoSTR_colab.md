@@ -48,27 +48,27 @@ There are two primary ways to open the lakeCoSTR tool in Google Colaboratory:
 
 #### 1) if you __DO__ have a GitHub account:
     
-    a) simply fork the lakeCoSTR_colab repository, navigate to the lakeCoSTR.ipynb notebook and click the 'Open in Colab' link at the top of the file (circled below in RED)
-        ![Open in Colab](imgs/lakeCoSTR_open.png)
+a) simply fork the lakeCoSTR_colab repository, navigate to the lakeCoSTR.ipynb notebook and click the 'Open in Colab' link at the top of the file (circled below in RED)
+    ![Open in Colab](imgs/lakeCoSTR_open.png)
 
-    b) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
-        ![Save to Drive](imgs/lakeCoSTR_save.png)
+b) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
+    ![Save to Drive](imgs/lakeCoSTR_save.png)
 
 
 #### 2) if you __DO NOT__ have a GitHub account:
     
-    a) on the landing page of the repository, click the green button labeled 'Code' and choose the option 'Download ZIP'. This will download the reopository to your computer.
-        ![Download the Repo](imgs/lakeCoSTR_download.png)
+a) on the landing page of the repository, click the green button labeled 'Code' and choose the option 'Download ZIP'. This will download the reopository to your computer.
+    ![Download the Repo](imgs/lakeCoSTR_download.png)
 
-    b) unzip the folder
+b) unzip the folder
 
-    c) navigate to [the Colab browser](https://colab.research.google.com/)
+c) navigate to [the Colab browser](https://colab.research.google.com/)
 
-    d) In the Colab browser, upload the lakeCoSTR.ipynb file from the downloaded repository by clicking 'File' -> 'Upload Notebook':
-        ![Upload file](imgs/lakeCoSTR_upload.png)
+d) In the Colab browser, upload the lakeCoSTR.ipynb file from the downloaded repository by clicking 'File' -> 'Upload Notebook':
+    ![Upload file](imgs/lakeCoSTR_upload.png)
 
-    e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
-        ![Save to Drive](imgs/lakeCoSTR_save.png)
+e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
+    ![Save to Drive](imgs/lakeCoSTR_save.png)
 
 
 
