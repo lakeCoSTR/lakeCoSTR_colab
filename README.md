@@ -9,6 +9,8 @@ This work is licensed under a
 
 # lakeCoSTR for Colab
 
-lakeCoSTR is a Python notebook for Google Colaboratory to facilitate the acquisition and aggregation of the Landsat Collection 2 surface temperature product for global lakes.
+lakeCoSTR is a Python notebook for Google Colaboratory to facilitate the acquisition and aggregation of the Landsat Collection 2 surface temperature product for global lakes. lakeCoSTR also will pair user-provided *in situ* data with the Landsat record, providing a ground-truth dataset for users to assess the performance of the Landsat Collection 2 surface temperature estimates for their lake of interest.
+
+
 
 
