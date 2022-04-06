@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/478682003.svg)](https://zenodo.org/badge/latestdoi/478682003)
+
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
@@ -11,6 +13,6 @@ This work is licensed under a
 
 lakeCoSTR is a Python notebook for Google Colaboratory to facilitate the acquisition and aggregation of the Landsat Collection 2 surface temperature product for global lakes. lakeCoSTR also will pair user-provided *in situ* data with the Landsat record, providing a ground-truth dataset for users to assess the performance of the Landsat Collection 2 surface temperature estimates for their lake of interest.
 
-
+Please refer to the [User Guide](https://github.com/lakeCoSTR/lakeCoSTR_colab/blob/main/UserGuide_lakeCoSTR_colab.md) prior to using lakeCoSTR.
 
 
