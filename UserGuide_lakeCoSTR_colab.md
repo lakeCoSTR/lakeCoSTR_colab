@@ -1,10 +1,10 @@
 # lakeCoSTR User Guide
 
-We created lakeCoSTR to make the acquisition and analysis of Landsat's Collection 2 Surface Temperature product more accessible for those interested in obtaining historical estimates of lake temperature from remote sensing data. This tool is geared towards researchers interested in gathering historical temperature estimates, especially for small lakes, who don't necessarily have experience working with remote sensing data. This tool leverages Google Earth Engine (GEE) (Gorelick, et al. 2017), the GEE Python API, and Google Colaboratory (Bisong, 2019).
+We created lakeCoSTR to make the acquisition and analysis of Landsat's Collection 2 Surface Temperature product more accessible for those interested in obtaining historical estimates of lake temperature from remote sensing data. This tool is geared towards researchers interested in gathering historical temperature estimates, especially for small lakes, who don't necessarily have experience working with remote sensing data. This tool leverages the unprecedented historical Landsat 4, 5, 7, and 8 Collection 2 remote sensing dataset using Google Earth Engine (GEE) (Gorelick, et al. 2017), the GEE Python API, and Google Colaboratory (Bisong, 2019).
 
 You must have <a href="https://support.google.com/accounts/answer/27441?hl=en" target="_blank" rel="noopener noreferrer">Google Account</a> and <a href="https://signup.earthengine.google.com/" target="_blank" rel="noopener noreferrer">Google Earth Engine Credentials</a> in order to use this tool.
 
-lakeCoSTR is an open-source tool, but please cite accordingly - the widget provided on the right side of the <a href = "https://github.com/lakeCoSTR/lakeCoSTR_colab" target="_blank" rel="noopener noreferrer">repository landing page</a> will provide a citation. 
+lakeCoSTR is an open-source tool, but please cite accordingly - the widget provided on the right side of the <a href = "https://github.com/lakeCoSTR/lakeCoSTR_colab" target="_blank" rel="noopener noreferrer">repository landing page</a> will provide a citation.
 
 
 ## Features of lakeCoSTR
@@ -76,9 +76,7 @@ e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save
 ![Save to Drive](imgs/lakeCoSTR_save.png)
 
 
-
-
-*Citations:*
+## *Citations:*
 
 Bisong, Ekaba. 2019. “Google Colaboratory.” In Building Machine Learning and Deep Learning Models on Google Cloud Platform: A Comprehensive Guide for Beginners, edited by Ekaba Bisong, 59–64. Berkeley, CA: Apress. https://doi.org/10.1007/978-1-4842-4470-8_7.
 
