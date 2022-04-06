@@ -35,18 +35,17 @@ __lakeCoSTR may not perform well at high latitudes__
  - solar zenith angle, as provided in the Landsat scene metadata is included in the output *.csv*
 
 
-## If you've never used Colab:
-
-Visit the <a href = "https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Colab Basics</a> webpage and run through the script that pops up on this page. It will walk your through how to use a Colab Notebook!
-
-
 ## Using the lakeCoSTR
+
+### If you've never used Colab:
+
+First, visit the <a href = "https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Colab Basics</a> webpage and run through the script that pops up on this page. It will walk your through how to use a Colab Notebook and run cells.
 
 ### Open the tool 
 
 There are two primary ways to open the lakeCoSTR tool in Google Colaboratory:
 
-#### 1) if you __DO__ have a GitHub account:
+#### 1) if you have a GitHub account:
     
 a) simply fork the lakeCoSTR_colab repository, navigate to the lakeCoSTR.ipynb notebook and click the 'Open in Colab' link at the top of the file (circled below in RED)
     
@@ -74,6 +73,40 @@ d) In the Colab browser, upload the lakeCoSTR.ipynb file from the downloaded rep
 e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
     
 ![Save to Drive](imgs/lakeCoSTR_save.png)
+
+### Run through the lakeCoSTR script
+
+This should be pretty easy - lots of clicking that run [colab run](imgs/colab_run.png) button! 
+
+If you come across an issue with lakeCoSTR, please save your Colab notebook, screenshot your error, and send us an email (steeleb@caryinstitute.org and christina.herrick@unh.edu) or submit an issue on GitHub. 
+
+#### *in situ* data formatting
+
+In order to pair the acquired Landsat data with *in situ* data, you'll need to format the data in a specific manner and tell us a few things about the timestamp of the data provided.
+
+1) Your *in situ* file must be a .csv and have the following column names:
+
+    datetime: Date and time of each temperature reading in a recognized *strftime* format
+
+    temp_degC: an integer or float number representing temperature in degrees Celcius
+
+    location: for in-lake statistics, a column with lake zone names (string format, no special characters); can be all the same for a single output or differentiated by lake zones/sensors
+    
+    depth_m: as an integer or float number, for statistics about the depth of sensors for matched scenes
+
+2) your <datetime> column must be in <a href="https://strftime.org/" target = "_blank" rel="noopener noreferrer">strftime</a> format. In order for lakeCoSTR to provide you with a Landsat-*in situ* match file, you will have to indicate what the format of the datetime column is. 
+
+ - for example, if your date is formatted like this: '2007-10-05 18:07:00', your strftime format is: '%Y-%m-%d %H:%M:%S'. 
+
+ - or: '05Oct2007 6:07 PM', your strftime format is: '%d%b%Y %I:%M %p'
+   
+3) you must indicate an <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target = "_blank" rel = "noopener noreferrer">Olson Database Time Zone</a>. 
+
+ - the <insitu_timezone> requires you to enter the text from the __TZ database name__ EXACTLY of the corresponding row of the above-linked table. 
+
+ - please pay special attention to the STD (standard time) and DST (daylight savings time) offsets to make sure they align with your data. 
+
+ - if you use the *Etc/GMT* option, where no DST is observed, please note that the offset signs are *intentionally inverted* 
 
 
 ## *Citations:*
