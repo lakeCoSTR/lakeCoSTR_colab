@@ -76,7 +76,7 @@ e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save
 
 ### Run through the lakeCoSTR script
 
-This should be pretty easy - lots of clicking that run [colab run](imgs/colab_run.png) button! 
+This should be pretty easy - lots of clicking that run ![colab run](imgs/colab_run.png) button! 
 
 If you come across an issue with lakeCoSTR, please save your Colab notebook, screenshot your error, and send us an email (steeleb@caryinstitute.org and christina.herrick@unh.edu) or submit an issue on GitHub. 
 
