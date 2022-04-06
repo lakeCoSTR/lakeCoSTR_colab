@@ -1,12 +1,12 @@
 cff-version: 1.1.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Christina
-    given-names: Herrick
-    orcid: https://orcid.org/0000-0002-8384-9450
-  - family-names: Bethel G
-    given-names: Steele
-    orcid: https://orcid.org/0000-0003-4365-4103
+- family-names: Christina
+  given-names: Herrick
+  orcid: https://orcid.org/0000-0002-8384-9450
+- family-names: Bethel G
+  given-names: Steele
+  orcid: https://orcid.org/0000-0003-4365-4103
 title: lakeCoSTR/lakeCoSTR_colab: lakeCoSTR for Google Colaboratory
 version: v1.10
 doi: 10.5281/zenodo.6419853
