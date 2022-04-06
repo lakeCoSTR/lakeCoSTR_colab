@@ -2,9 +2,9 @@
 
 We created lakeCoSTR to make the acquisition and analysis of Landsat's Collection 2 Surface Temperature product more accessible for those interested in obtaining historical estimates of lake temperature from remote sensing data. This tool is geared towards researchers interested in gathering historical temperature estimates, especially for small lakes, who don't necessarily have experience working with remote sensing data. This tool leverages Google Earth Engine (GEE) (Gorelick, et al. 2017), the GEE Python API, and Google Colaboratory (Bisong, 2019).
 
-You must have <a href="https://support.google.com/accounts/answer/27441?hl=en" target="_blank">Google Account</a> and <a href="https://signup.earthengine.google.com/" target="_blank">Google Earth Engine Credentials</a> in order to use this tool.
+You must have <a href="https://support.google.com/accounts/answer/27441?hl=en" target="_blank" rel="noopener noreferrer">Google Account</a> and <a href="https://signup.earthengine.google.com/" target="_blank" rel="noopener noreferrer">Google Earth Engine Credentials</a> in order to use this tool.
 
-lakeCoSTR is an open-source tool, but please cite accordingly - the widget provided on the right side of the <a href = "https://github.com/lakeCoSTR/lakeCoSTR_colab" target="_blank">repository landing page</a> will provide a citation. 
+lakeCoSTR is an open-source tool, but please cite accordingly - the widget provided on the right side of the <a href = "https://github.com/lakeCoSTR/lakeCoSTR_colab" target="_blank" rel="noopener noreferrer">repository landing page</a> will provide a citation. 
 
 
 ## Features of lakeCoSTR
@@ -20,7 +20,7 @@ __lakeCoSTR makes it easy to pair the Landsat surface temperature estimates with
 ## Constraints and Caveats 
 
 __lakeCoSTR works best for small lakes__
- - small lakes are usually completely contained within one or more <a href = "https://landsat.gsfc.nasa.gov/about/the-worldwide-reference-system/" target="_blank">WRS-2 path rows</a>. lakeCoSTR does not aggregate data between multiple Landsat path-rows. Users will be messaged in the tool if there are issues with this
+ - small lakes are usually completely contained within one or more <a href = "https://landsat.gsfc.nasa.gov/about/the-worldwide-reference-system/" target="_blank" rel="noopener noreferrer">WRS-2 path rows</a>. lakeCoSTR does not aggregate data between multiple Landsat path-rows. Users will be messaged in the tool if there are issues with this
  - small lakes require a smaller amount of cloud compute power and are less likely to time-out the Google Earth Engine API within the tool. If a compute time-out occurs, users will be notified of how to troubleshoot within the tool
  - lake-of-interest must have a surface area of at least 0.4ha or approximately 42 30x30m pixels large for lakeCoSTR to provide meaningful summary statistics.
 
@@ -37,7 +37,7 @@ __lakeCoSTR may not perform well at high latitudes__
 
 ## If you've never used Colab:
 
-Visit the <a href = "https://colab.research.google.com/" target="_blank">Colab Basics</a> webpage and run through the script that pops up on this page. It will walk your through how to use a Colab Notebook!
+Visit the <a href = "https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Colab Basics</a> webpage and run through the script that pops up on this page. It will walk your through how to use a Colab Notebook!
 
 
 ## Using the lakeCoSTR
@@ -65,7 +65,7 @@ a) on the landing page of the repository, click the green button labeled 'Code' 
 
 b) unzip the folder
 
-c) navigate to <a href = "https://colab.research.google.com/" target="_blank">the Colab browser</a>
+c) navigate to <a href = "https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">the Colab browser</a>
 
 d) In the Colab browser, upload the lakeCoSTR.ipynb file from the downloaded repository by clicking 'File' -> 'Upload Notebook':
     
