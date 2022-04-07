@@ -35,7 +35,7 @@ __lakeCoSTR may not perform well at high latitudes__
  - solar zenith angle, as provided in the Landsat scene metadata is included in the output *.csv*
 
 
-## Using the lakeCoSTR
+## Using lakeCoSTR
 
 ### If you've never used Colab:
 
