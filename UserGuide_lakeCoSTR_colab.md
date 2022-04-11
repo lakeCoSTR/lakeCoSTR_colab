@@ -56,18 +56,18 @@ There are two primary ways to open the lakeCoSTR tool in Google Colaboratory:
     
 a) simply fork the lakeCoSTR_colab repository, navigate to the lakeCoSTR.ipynb notebook and click the 'Open in Colab' link at the top of the file (circled below in RED)
     
-![Open in Colab](imgs/lakeCoSTR_open.png)
+   ![Open in Colab](imgs/lakeCoSTR_open.png)
 
 b) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
     
-![Save to Drive](imgs/lakeCoSTR_save.png)
+   ![Save to Drive](imgs/lakeCoSTR_save.png)
 
 
 #### 2) if you __DO NOT__ have a GitHub account:
     
 a) on the landing page of the repository, click the green button labeled 'Code' and choose the option 'Download ZIP'. This will download the reopository to your computer.
     
-![Download the Repo](imgs/lakeCoSTR_download.png)
+   ![Download the Repo](imgs/lakeCoSTR_download.png)
 
 b) unzip the folder
 
@@ -75,11 +75,11 @@ c) navigate to <a href = "https://colab.research.google.com/" target="_blank" re
 
 d) In the Colab browser, upload the lakeCoSTR.ipynb file from the downloaded repository by clicking 'File' -> 'Upload Notebook':
     
-![Upload file](imgs/lakeCoSTR_upload.png)
+   ![Upload file](imgs/lakeCoSTR_upload.png)
 
 e) In the Colab browser, click 'File' -> 'Save a copy in Drive' - this will save a copy of the lakeCoSTR tool to your Google Drive in a folder called 'Colab Notebooks'.
     
-![Save to Drive](imgs/lakeCoSTR_save.png)
+   ![Save to Drive](imgs/lakeCoSTR_save.png)
 
 ### Run through the lakeCoSTR script
 
@@ -87,33 +87,105 @@ This should be pretty easy - lots of clicking that run ![colab run](imgs/colab_r
 
 If you come across an issue with lakeCoSTR, please save your Colab notebook, screenshot your error, and send us an email (steeleb@caryinstitute.org and christina.herrick@unh.edu) or submit an issue on GitHub. 
 
-#### *in situ* data formatting
+#### details about *in situ* data formatting
 
-In order to pair the acquired Landsat data with *in situ* data, you'll need to format the data in a specific manner and tell us a few things about the timestamp of the data provided.
+In order to pair the acquired Landsat data with *in situ* data, you'll need to format the data in a specific manner and tell us a few things about the timestamp of the data provided. An input data example is available at the [lakeCoSTR_examples](https://github.com/lakeCoSTR/lakeCoSTR_examples) repository.
 
 1) Your *in situ* file must be a .csv and have the following column names:
 
-    datetime: Date and time of each temperature reading in a recognized *strftime* format
+        datetime: Date and time of each temperature reading in a recognized *strftime* format
 
-    temp_degC: an integer or float number representing temperature in degrees Celcius
+        temp_degC: an integer or float number representing temperature in degrees Celcius
 
-    location: for in-lake statistics, a column with lake zone names (string format, no special characters); can be all the same for a single output or differentiated by lake zones/sensors
-    
-    depth_m: as an integer or float number, for statistics about the depth of sensors for matched scenes
+        location: for in-lake statistics, a column with lake zone names (string format, no special characters); can be all the same for a single output or differentiated by lake zones/sensors
+        
+        depth_m: as an integer or float number, for statistics about the depth of sensors for matched scenes
 
 2) your <datetime> column must be in <a href="https://strftime.org/" target = "_blank" rel="noopener noreferrer">strftime</a> format. In order for lakeCoSTR to provide you with a Landsat-*in situ* match file, you will have to indicate what the format of the datetime column is. 
 
- - for example, if your date is formatted like this: '2007-10-05 18:07:00', your strftime format is: '%Y-%m-%d %H:%M:%S'. 
+    - for example, if your date is formatted like this: '2007-10-05 18:07:00', your strftime format is: '%Y-%m-%d %H:%M:%S'. 
 
- - or: '05Oct2007 6:07 PM', your strftime format is: '%d%b%Y %I:%M %p'
+    - or: '05Oct2007 6:07 PM', your strftime format is: '%d%b%Y %I:%M %p'
    
 3) you must indicate an <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target = "_blank" rel = "noopener noreferrer">Olson Database Time Zone</a>. 
 
- - the <insitu_timezone> requires you to enter the text from the __TZ database name__ EXACTLY of the corresponding row of the above-linked table. 
+    - the <insitu_timezone> requires you to enter the text from the __TZ database name__ EXACTLY of the corresponding row of the above-linked table. 
 
- - please pay special attention to the STD (standard time) and DST (daylight savings time) offsets to make sure they align with your data. 
+    - please pay special attention to the STD (standard time) and DST (daylight savings time) offsets to make sure they align with your data. 
 
- - if you use the *Etc/GMT* option, where no DST is observed, please note that the offset signs are *intentionally inverted* 
+    - if you use the *Etc/GMT* option, where no DST is observed, please note that the offset signs are *intentionally inverted* 
+
+#### output file definitions and documentation
+
+Examples of data output are also found at the [lakeCoSTR_examples](https://github.com/lakeCoSTR/lakeCoSTR_examples) repository.
+
+__GoogleDrive/lakeCoSTR_output/*LAKENAME*/*LAKENAME*_temp_stats.csv__
+
+This is the *.csv* represents the summary data for every available Landsat 4-8 scene, given the user-defined lake area and time period of interest. This output file from lakeCoSTR has the same format no matter the lake or time period extent.
+
+| Column Header | Column definition | Units | Source of data | 
+|   --- | --- | --- | --- |
+|   system:index    |   Landsat scene identifier: *PROCESSINGLEVEL*_*LANDSATCOLLECTION*_*LANDSATDATATIER*_*LANDSATMISSION*_*PATHROW*_*ACQUISITIONDATE* | textString | scene-level metadata |
+|	availablePixels_count | total pixels available for analysis, after pixel-level bit mask and geometry masks applied | pixel | GSWD masked by bit QA and geometry of lake |
+|	cloudcover_pct_scene | percent cloud cover of entire Landsat scene | percent | Landsat scene metadata |
+|	datetime_landsat | datetime stamp of image acquisition in Landsat datetime format | integer; milliseconds since epoch | Landsat scene metadata |
+|	esd_au_scene | earth-sun distance | astronomical units | Landsat scene metadata |
+|	lakeCoverage_pct | percent of coverage of the lake in a given scene, calculated as (availablePixels_count/total number of GSWD pixels) * 100 | percent | GSWD masked by bit QA and geometry of lake |
+|	sunazi_deg_scene | sun azimuth angle | degree | Landsat scene metadata |
+|	sunelev_deg_scene | sun elevation | degree | Landsat scene metadata |
+|	surface_temp_kurtosis | measure of tailedness of histogram for temperature estimates of the lake for a given scene | none | pixel-level analysis |
+|	surface_temp_max | maximum temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_mean |  mean temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_median |  median temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_min |  minimum temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_p25 |  25th percentile temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_p75 |  75th percentile temperature for a given scene | degreeCelsius | pixel-level analysis | 
+|	surface_temp_skew | skew of the histogram for temperature estimates of the lake for a given scene | none | pixel-level analysis |
+|	surface_temp_stdDev | standard deviation from the mean for the temeperature estimates of the lake for a given scene | degreeCelsius | pixel-level analysis |
+|   .geo |  artifact of GEE extract |   none |  GEE |
+
+__GoogleDrive/lakeCoSTR_output/*LAKENAME*/histograms__
+
+This folder contains the exported .png files of the histograms of the pixel-level temperature estimates. 
+
+The file names are formatted as the following:
+
+*MISSION*_*PROCESSINGLEVEL*_*PATHROW*_*ACQUISITIONDATE*_*PROCESSINGDATE*_*LANDSATCOLLECTION*_*LANDSATTIER*_histo.png
+
+An example is:
+*LC08*_*L1TP*_*013030*_*20150702*_*20200909*_*02*_*T1*_histo
+
+This would be the histogram for the *Landsat 8* mission, *Level 1* processing, path *013* row *030*, acquired ong *2015-07-02*, processed on *2020-09-09*, *Collection 2*, *Tier 1*.
+
+__GoogleDrive/lakeCoSTR_output/*LAKENAME*/*LAKENAME*_temp_landsat_paired.csv__
+
+This is the *.csv* that is the result of using the Landsat-*in situ* pairing process in lakeCoSTR. Here, the primary output file (*LAKENAME*_temp_stats.csv) is filtered and matched with user-provided *in situ* data as described above. The paired dataset copies the columns from the *LAKENAME*_temp_stats.csv and adds a few additional columns, where *LOCATION* is gathered from the *in situ* data column 'location'. When multiple locations are present in the user-provided dataset, the median, mean, standard deviation and count *LOCATION* columns will be repeated with a new location name.
+
+| Column Header | Column definition | Units | Source of data | 
+|   --- | --- | --- | --- |
+|   landsat_time_utc    | datetime of the scene acquistion in UTC time |    YYYY-MM-DD HH:MM:SS |  Landsat scene metadata |
+|	scene | Landsat scene identifier: *MISSION*_*PROCESSINGLEVEL*_*PATHROW*_*ACQUISITIONDATE*_*PROCESSINGDATE*_*LANDSATCOLLECTION*_*LANDSATTIER* | textString | Landsat scene metadata |
+|	is_temp_avg | average *in situ* temperature measured in user-defined time window, across all locations | degreeCelsius | user-provided *in situ* data file |
+|	is_temp_stdev | standard deviation of the mean for *in situ* temperature measured in user-defined time window, across all locations | degreeCelsius | user-provided *in situ* data file |
+|	is_depth_avg | average depth of *in situ* values in user-defined time window, across all locations | meter | user-provided *in situ* data file |
+|	is_depth_stdev | standard deviation of the mean for the depth of *in situ* values in user-defined time window, across all locations | meter | user-provided *in situ* data file |
+|	is_temp_med | median *in situ* temperature measured in user-defined time window, across all locations | degreeCelsius | user-provided *in situ* data file |
+|	insitu_count | total number of *in situ* measurements contributing to the aggregated values | count | user-provided *in situ* data file |
+|	*LOCATION*_median | median *in situ* temperature measured in user-defined time window, at *LOCATION* | degreeCelsius | user-provided *in situ* data file |
+|	*LOCATION*_mean | average *in situ* temperature measured in user-defined time window, at *LOCATION* | degreeCelsius | user-provided *in situ* data file |
+|	*LOCATION*_std | standard deviation of the mean *in situ* temperature measured in user-defined time window, at *LOCATION* | degreeCelsius | user-provided *in situ* data file |
+|	*LOCATION*_count| total number of *in situ* measurements contributing to the aggregated values at *LOCATION* | count | user-provided *in situ* data file |
+
+__GoogleDrive/lakeCoSTR_output/*LAKENAME*/ancillary__
+
+This folder contains individual *.csv* files for each scene, listing the individual temperature measurements included in the aggregated data found in the *LAKENAME*_temp_landsat_paired.csv file. File names are labeled with the 'scene' value from the *LAKENAME*_temp_landsat_paired.csv file. We encourage users to check this file to make sure that they have selected the correct UTC offset in the lakeCoSTR tool. This file copies all columns from the user-provided *in situ* data file and then adds the following additional columns:
+
+| Column Header | Column definition | Units | Source of data | 
+|   --- | --- | --- | --- |
+|	datetime_utc | datetime, converted to UTC time based on the user-defined timezone | YYYY-MM-DD HH:MM | user-provided *in situ* data file |
+|	dt_delta |  difference between datetime_utc (*in situ* measurement) and Landsat acquisition time (landsat_time_utc in *LAKENAME*_temp_landsat_paired.csv file) | DAYS HH:MM:SS | lakeCoSTR calculation |
+|	delta_secs | difference between datetime_utc (*in situ* measurement) and Landsat acquisition time (landsat_time_utc in *LAKENAME*_temp_landsat_paired.csv file) in seconds | second | lakeCoSTR calculation |
+
 
 
 ## *Citations:*
