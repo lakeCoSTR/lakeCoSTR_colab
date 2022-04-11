@@ -19,6 +19,10 @@ __lakeCoSTR makes it easy to pair the Landsat surface temperature estimates with
 
 ## Constraints and Caveats 
 
+__lakeCoSTR does not correct for the impact of cloud and cloud shadows__
+ - Cook (2014) identified that the Landsat surface temperature product was affected by cloud and cloud shadows, creating pixel-level estimates that underestimated actual surface temperature of the water
+ - preliminary analyses using lakeCoSTR to estimate lake surface temperature for Lake Sunapee in New Hampshire, USA showed that no calibration to *in situ* data was needed for the use of Landsat temperature estimates and that most perceived atmospheric contamination was eliminated using a filter on the kurtosis of the histogram of pixel-level temperature data (Herrick and Steele et al., currently in peer review) 
+
 __lakeCoSTR works best for small lakes__
  - small lakes are usually completely contained within one or more <a href = "https://landsat.gsfc.nasa.gov/about/the-worldwide-reference-system/" target="_blank" rel="noopener noreferrer">WRS-2 path rows</a>. lakeCoSTR does not aggregate data between multiple Landsat path-rows. Users will be messaged in the tool if there are issues with this
  - small lakes require a smaller amount of cloud compute power and are less likely to time-out the Google Earth Engine API within the tool. If a compute time-out occurs, users will be notified of how to troubleshoot within the tool
@@ -33,6 +37,9 @@ __lakeCoSTR was only designed to extract surface temperature for lakes during ic
 __lakeCoSTR may not perform well at high latitudes__
  - there is currently no solar zenith angle cutoff employed in the lakeCoSTR tool: this may result in distortions of temperature estimates and location precision
  - solar zenith angle, as provided in the Landsat scene metadata is included in the output *.csv*
+
+__lake-specific Landsat-*in situ* comparisons are highly encouraged__
+ - the Landsat surface temperature product used in lakeCoSTR has not been widely tested across the world - comparisons between the Landsat surface temperature estiamtes and *in situ* data at a lake-by-lake scale are encouraged at this time
 
 
 ## Using lakeCoSTR
