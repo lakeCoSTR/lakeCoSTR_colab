@@ -17,4 +17,7 @@ lakeCoSTR is a Python notebook for Google Colaboratory to facilitate the acquisi
 
 Further documentation and examples of input and output files can be found at the [lakeCoSTR_examples](https://github.com/lakeCoSTR/lakeCoSTR_examples) repository.
 
+# Version History
+v1.12: This update includes masking of cloud shadows.
+
 
