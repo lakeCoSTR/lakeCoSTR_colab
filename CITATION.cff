@@ -7,8 +7,9 @@ authors:
 - family-names: "Steele"
   given-names: "Bethel G"
   orcid: "https://orcid.org/0000-0003-4365-4103"
-title: "lakeCoSTR for Google Colaboratory"
-version: v1.11
-doi: 10.5281/zenodo.6449004
-date-released: 2022-04-11
+title: lakeCoSTR/lakeCoSTR_colab: lakeCoSTR for Google Colaboratory v1.12
+version: v1.12
+doi: 10.5281/zenodo.7097585
+date-released: 2022-09-20
 url: "https://github.com/lakeCoSTR/lakeCoSTR_colab"
+
