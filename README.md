@@ -1,6 +1,13 @@
-lakeCoSTR_colab v1.12: [![DOI](https://zenodo.org/badge/478682003.svg)](https://zenodo.org/badge/latestdoi/478682003)
+lakeCoSTR_colab v1.12 software [![DOI](https://zenodo.org/badge/478682003.svg)](https://zenodo.org/badge/latestdoi/478682003)
+lakeCoSTR manuscript in Ecosphere featuring this product: [lakeCoSTR: A tool to facilitate use of Landsat Collection 2 to estimate lake surface water temperatures](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.4357).
 
 This work is licensed under a GNU GPL3 licence. Note that data acquired using GEE can not be used for commercial use without express permission from NASA. 
+
+# Suggested Citations
+
+Herrick, C., & Steele, B. G., et al. 2023. lakeCoSTR: A Tool to Facilitate Use of Landsat Collection 2 to Estimate Lake Surface Water Temperatures. Ecosphere 14(1): e4357. https://doi.org/10.1002/ecs2.4357
+
+Herrick, C., & Steele, B. G. 2022. lakeCoSTR for Google Colaboratory v1.12 (v1.12). Zenodo. https://doi.org/10.5281/zenodo.7097585
 
 # lakeCoSTR for Colab
 
