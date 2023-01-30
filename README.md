@@ -1,6 +1,6 @@
 lakeCoSTR_colab v1.12: [![DOI](https://zenodo.org/badge/478682003.svg)](https://zenodo.org/badge/latestdoi/478682003)
 
-This work is licensed under a GPL GNU 3 licence. Note that data acquired using GEE can not be used for commercial use without express permission from NASA. 
+This work is licensed under a GNU GPL3 licence. Note that data acquired using GEE can not be used for commercial use without express permission from NASA. 
 
 # lakeCoSTR for Colab
 
